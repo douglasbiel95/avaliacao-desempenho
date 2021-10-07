@@ -4,9 +4,18 @@ dist: trusty
 jdk:
   - openjdk11
 
+addons:
+  sonarcloud:
+    organization: $SONAR_ORGANIZATION
+    token: $SONAR_TOKEN
+
+script:
+  - mvn clean package sonar:sonar -P sonar
+
 before_install:
   - chmod +x mvnw
 
 cache:
   directories:
     - $HOME/.m2
+    - $home/.sonar/cache
