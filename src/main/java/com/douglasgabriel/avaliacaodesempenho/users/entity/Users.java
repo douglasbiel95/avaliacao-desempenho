@@ -1,5 +1,6 @@
 package com.douglasgabriel.avaliacaodesempenho.users.entity;
 
+import com.douglasgabriel.avaliacaodesempenho.utils.audit.Auditable;
 import lombok.Builder;
 import lombok.Data;
 
@@ -9,7 +10,7 @@ import java.io.Serializable;
 @Entity
 @Data
 @Builder
-public class Users implements Serializable {
+public class Users extends Auditable implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,6 +27,4 @@ public class Users implements Serializable {
 
     @Column(nullable = false)
     private final String senha;
-
-
 }
