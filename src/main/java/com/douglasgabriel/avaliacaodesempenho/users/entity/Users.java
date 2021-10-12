@@ -1,18 +1,25 @@
 package com.douglasgabriel.avaliacaodesempenho.users.entity;
 
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 import com.douglasgabriel.avaliacaodesempenho.utils.audit.Auditable;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
-
-import javax.persistence.*;
-import java.io.Serializable;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-@Builder
+@NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode(callSuper = false)
 public class Users extends Auditable implements Serializable {
 
     /**
@@ -22,17 +29,17 @@ public class Users extends Auditable implements Serializable {
 
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private final Long id;
+    private Long id;
 
     @Column(nullable = false)
-    private final String nome;
+    private String nome;
 
     @Column(nullable = false, unique = true)
-    private final String nomeUsuario;
+    private String nomeUsuario;
 
     @Column(nullable = false, unique = true)
-    private final String email;
+    private String email;
 
     @Column(nullable = false)
-    private final String senha;
+    private String senha;
 }
