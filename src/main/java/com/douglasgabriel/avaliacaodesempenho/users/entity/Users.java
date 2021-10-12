@@ -1,6 +1,8 @@
 package com.douglasgabriel.avaliacaodesempenho.users.entity;
 
 import com.douglasgabriel.avaliacaodesempenho.utils.audit.Auditable;
+
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 
@@ -10,6 +12,7 @@ import java.io.Serializable;
 @Entity
 @Data
 @Builder
+@AllArgsConstructor
 public class Users extends Auditable implements Serializable {
 
     /**
