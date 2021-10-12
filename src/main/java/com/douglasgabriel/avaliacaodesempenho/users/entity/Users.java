@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import com.douglasgabriel.avaliacaodesempenho.utils.audit.Auditable;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -20,6 +21,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = false)
+@Builder
 public class Users extends Auditable implements Serializable {
 
 	private static final long serialVersionUID = 1L;
